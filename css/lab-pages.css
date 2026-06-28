@@ -1,5 +1,119 @@
-Laboratory of Applied Bioscience, University of Chittagong
+/* ==========================================================================
+   Lab-specific page styling
+   Uses CSS variables set on <body> by each lab page
+   ========================================================================== */
 
-At the Laboratory of Applied Bioscience, my work focuses on utilizing Caenorhabditis elegans (C. elegans) as a model organism to assess the effects of plant-derived extracts and synthetic compounds. With its genetic simplicity, well-characterized biology, and relevance to higher organisms, C. elegans offers a powerful system for studying therapeutic potential and understanding mechanisms linked to health and disease.
+body.lab1-page { --lab-active: var(--lab1-accent); --lab-active-dark: var(--lab1-accent-dark); --lab-active-soft: var(--lab1-accent-soft); }
+body.lab2-page { --lab-active: var(--lab2-accent); --lab-active-dark: var(--lab2-accent-dark); --lab-active-soft: var(--lab2-accent-soft); }
 
-This research aims to identify and characterize bioactive compounds that may contribute to novel pharmacological applications. By bridging experimental biology with modern analytical approaches, our work strengthens model organism research in Bangladesh and contributes to global scientific efforts in drug discovery and human health.
+/* Banner accent stripe */
+body.lab1-page .page-banner {
+  background:
+    linear-gradient(135deg, rgba(7, 34, 63, 0.95) 0%, rgba(15, 83, 126, 0.9) 45%, rgba(39, 141, 202, 0.78) 100%),
+    url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+}
+body.lab2-page .page-banner {
+  background:
+    linear-gradient(135deg, rgba(6, 28, 50, 0.95) 0%, rgba(18, 82, 113, 0.9) 45%, rgba(31, 120, 176, 0.78) 100%),
+    url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+}
+body.lab1-page .page-banner::before {
+  background-image: radial-gradient(circle at 80% 30%, rgba(255,255,255,0.15) 0%, transparent 50%);
+}
+body.lab2-page .page-banner::before {
+  background-image: radial-gradient(circle at 80% 30%, rgba(255,255,255,0.15) 0%, transparent 50%);
+}
+
+/* PI profile accent border */
+body.lab1-page .pi-profile { border-top: 4px solid var(--lab1-accent); }
+body.lab2-page .pi-profile { border-top: 4px solid var(--lab2-accent); }
+
+/* Section headings accent underline */
+body.lab1-page h2::after,
+body.lab2-page h2::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--lab-active);
+  margin-top: var(--space-2);
+  border-radius: 2px;
+}
+body.lab1-page .section-title h2::after,
+body.lab2-page .section-title h2::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Research focus list */
+.focus-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--space-3);
+}
+.focus-list li {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--lab-active);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-md);
+  margin: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+}
+.focus-list li:hover { transform: translateX(3px); box-shadow: var(--shadow-sm); }
+.focus-list li::before {
+  content: '';
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--lab-active);
+  flex-shrink: 0;
+  margin-top: 0.55rem;
+}
+.focus-list li strong { display: block; color: var(--primary); margin-bottom: 2px; }
+.focus-list li span { color: var(--text-muted); font-size: 0.92rem; }
+
+/* Project cards with lab accent */
+body.lab1-page .card { border-top: 3px solid var(--lab1-accent); }
+body.lab2-page .card { border-top: 3px solid var(--lab2-accent); }
+
+/* Members sub-list */
+.members-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--space-3);
+}
+.member-item {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  transition: box-shadow .2s var(--ease);
+}
+.member-item:hover { box-shadow: var(--shadow-sm); }
+.member-avatar {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--lab-active-soft);
+  color: var(--lab-active-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.member-info h4 { margin: 0 0 2px; font-family: var(--font-body); font-size: 1rem; }
+.member-info small { color: var(--text-muted); font-size: 0.85rem; }
