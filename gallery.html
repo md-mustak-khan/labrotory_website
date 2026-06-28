@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — CNAB</title>
+  <meta name="description" content="Photo gallery of CNAB researchers, events, and laboratory work." />
+  <meta property="og:title" content="Gallery — CNAB" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/responsive.css" />
+</head>
+<body class="gallery-page">
+
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="./index.html" class="logo" aria-label="CNAB home"><span class="logo-mark" aria-hidden="true">CN</span><span class="logo-text"><strong>CNAB</strong><small>Centre for Nutraceutical &amp; Applied Biosciences</small></span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="./index.html">Home</a></li>
+          <li class="nav-item"><a href="./about.html">About</a></li>
+          <li class="nav-item has-dropdown">
+            <button class="nav-link" aria-haspopup="true" aria-expanded="false">Laboratories</button>
+            <ul class="dropdown" role="menu">
+              <li><a href="./lab-food-nutraceutical.html" class="lab1" role="menuitem"><span class="dot"></span><span><strong>Food Science &amp; Nutraceutical</strong><small>Prof. Dwaipayan Sikdar</small></span></a></li>
+              <li><a href="./lab-applied-biosciences.html" class="lab2" role="menuitem"><span class="dot"></span><span><strong>Applied Biosciences</strong><small>Assoc. Prof. Suman Mojumder</small></span></a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="./research.html">Research</a></li>
+          <li class="nav-item"><a href="./publications.html">Publications</a></li>
+          <li class="nav-item"><a href="./people.html">People</a></li>
+          <li class="nav-item"><a href="./facilities.html">Facilities</a></li>          <li class="nav-item"><a href="./gallery.html">Gallery</a></li>
+          <li class="nav-item"><a href="./collaborations.html">Collaborations</a></li>
+          <li class="nav-item"><a href="./join-us.html">Join Us</a></li>
+          <li class="nav-item"><a href="./resources.html">Resources</a></li>
+          <li class="nav-item"><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-backdrop" aria-hidden="true"></div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-banner" aria-labelledby="page-title">
+      <div class="container">
+        <div class="breadcrumbs"><a href="./index.html">Home</a><span>/</span>Gallery</div>
+        <h1 id="page-title">Gallery</h1>
+        <p>Photos from the laboratory, conferences, seminars, and field work.</p>
+      </div>
+    </section>
+
+    <!-- PLACEHOLDER: replace with real images (use <img> tags inside .gallery-item) -->
+    <section class="section">
+      <div class="container">
+        <div class="gallery-grid">
+          <div class="gallery-item reveal" data-title="Laboratory workspace" data-desc="A shared workspace used by researchers from both laboratories." data-caption="Laboratory workspace"><span class="gallery-caption">Laboratory workspace</span></div>
+          <div class="gallery-item reveal" data-title="Joint seminar" data-desc="Participants at a CNAB joint seminar on nutrigenomics." data-caption="Joint seminar"><span class="gallery-caption">Joint seminar</span></div>
+          <div class="gallery-item reveal" data-title="Field collection" data-desc="Field collection of plant samples for phytochemical analysis." data-caption="Field collection"><span class="gallery-caption">Field collection</span></div>
+          <div class="gallery-item reveal" data-title="Conference presentation" data-desc="A PhD candidate presenting at a national conference." data-caption="Conference presentation"><span class="gallery-caption">Conference presentation</span></div>
+          <div class="gallery-item reveal" data-title="HPLC analysis" data-desc="Running HPLC analysis of a botanical extract." data-caption="HPLC analysis"><span class="gallery-caption">HPLC analysis</span></div>
+          <div class="gallery-item reveal" data-title="Bioinformatics workshop" data-desc="Participants at the Applied Biosciences bioinformatics workshop." data-caption="Bioinformatics workshop"><span class="gallery-caption">Bioinformatics workshop</span></div>
+          <div class="gallery-item reveal" data-title="Gel documentation" data-desc="Gel documentation of a PCR product." data-caption="Gel documentation"><span class="gallery-caption">Gel documentation</span></div>
+          <div class="gallery-item reveal" data-title="Group photo" data-desc="Group photo of CNAB members at the end-of-year gathering." data-caption="Group photo"><span class="gallery-caption">Group photo</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <div class="lightbox-content">
+      <button class="lightbox-close" aria-label="Close">✕</button>
+      <button class="lightbox-prev" aria-label="Previous image">‹</button>
+      <button class="lightbox-next" aria-label="Next image">›</button>
+      <div class="lightbox-media">Image placeholder</div>
+      <div class="lightbox-caption">
+        <h4 class="lightbox-title"></h4>
+        <p class="lightbox-desc"></p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div><h4>CNAB</h4><p>The Centre for Nutraceutical and Applied Biosciences (CNAB) is a joint academic research centre within the Department of Biochemistry and Molecular Biology, University of Chittagong, Bangladesh.</p></div>
+        <div><h4>Quick Links</h4><ul class="footer-links"><li><a href="./about.html">About</a></li><li><a href="./research.html">Research</a></li><li><a href="./publications.html">Publications</a></li><li><a href="./people.html">People</a></li><li><a href="./join-us.html">Join Us</a></li><li><a href="./contact.html">Contact</a></li></ul></div>
+        <div><h4>Contact</h4><ul class="footer-links footer-contact">
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg><span><strong>Prof. Dwaipayan Sikdar</strong><br/>email@cu.ac.bd</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg><span><strong>Assoc. Prof. Suman Mojumder</strong><br/>email@cu.ac.bd</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s-8-7.58-8-13a8 8 0 1116 0c0 5.42-8 13-8 13z"/><circle cx="12" cy="9" r="3"/></svg><span>Department of Biochemistry &amp; Molecular Biology, University of Chittagong, Chattogram-4331, Bangladesh</span></li>
+        </ul></div>
+      </div>
+      <div class="footer-bottom">
+        <div>© <span id="current-year"></span> Centre for Nutraceutical and Applied Biosciences (CNAB), University of Chittagong.</div>
+        <div class="social-links" aria-label="Social and academic links">
+          <a href="#" aria-label="Google Scholar"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.2 16.4A8 8 0 0112 4a8 8 0 016.8 12.4L12 22l-6.8-5.6zM12 6a4 4 0 100 8 4 4 0 000-8z"/></svg></a>
+          <a href="#" aria-label="ResearchGate"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="10"/></svg></a>
+          <a href="#" aria-label="ORCID"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="10"/></svg></a>
+          <a href="#" aria-label="Email"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+  <script src="./js/gallery-lightbox.js"></script>
+</body>
+</html>
