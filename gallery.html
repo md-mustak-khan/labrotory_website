@@ -45,7 +45,7 @@
   </header>
 
   <main id="main">
-    <section class="page-banner" aria-labelledby="page-title">
+    <section class="page-banner" aria-labelledby="page-title" data-bg-url="https://images.unsplash.com/photo-1591194570502-c801051a2937?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
       <div class="container">
         <div class="breadcrumbs"><a href="./index.html">Home</a><span>/</span>Gallery</div>
         <h1 id="page-title">Gallery</h1>
@@ -54,20 +54,42 @@
     </section>
 
     <!-- PLACEHOLDER: replace with real images (use <img> tags inside .gallery-item) -->
-    <section class="section">
-      <div class="container">
-        <div class="gallery-grid">
-          <div class="gallery-item reveal" data-title="Laboratory workspace" data-desc="A shared workspace used by researchers from both laboratories." data-caption="Laboratory workspace"><span class="gallery-caption">Laboratory workspace</span></div>
-          <div class="gallery-item reveal" data-title="Joint seminar" data-desc="Participants at a CNAB joint seminar on nutrigenomics." data-caption="Joint seminar"><span class="gallery-caption">Joint seminar</span></div>
-          <div class="gallery-item reveal" data-title="Field collection" data-desc="Field collection of plant samples for phytochemical analysis." data-caption="Field collection"><span class="gallery-caption">Field collection</span></div>
-          <div class="gallery-item reveal" data-title="Conference presentation" data-desc="A PhD candidate presenting at a national conference." data-caption="Conference presentation"><span class="gallery-caption">Conference presentation</span></div>
-          <div class="gallery-item reveal" data-title="HPLC analysis" data-desc="Running HPLC analysis of a botanical extract." data-caption="HPLC analysis"><span class="gallery-caption">HPLC analysis</span></div>
-          <div class="gallery-item reveal" data-title="Bioinformatics workshop" data-desc="Participants at the Applied Biosciences bioinformatics workshop." data-caption="Bioinformatics workshop"><span class="gallery-caption">Bioinformatics workshop</span></div>
-          <div class="gallery-item reveal" data-title="Gel documentation" data-desc="Gel documentation of a PCR product." data-caption="Gel documentation"><span class="gallery-caption">Gel documentation</span></div>
-          <div class="gallery-item reveal" data-title="Group photo" data-desc="Group photo of CNAB members at the end-of-year gathering." data-caption="Group photo"><span class="gallery-caption">Group photo</span></div>
-        </div>
+   <!-- Gallery -->
+<section class="section">
+  <div class="container">
+    <div class="gallery-grid">
+
+      <div class="gallery-item reveal" data-src="Gallery/Lab event 1.jpg" data-title="Lab event" data-desc="CNAB researchers working together during a seminar.">
+        <img src="Gallery/Lab event 1.jpg" alt="Lab event" />
       </div>
-    </section>
+
+      <div class="gallery-item reveal" data-src="Gallery/Lab event 2.jpg" data-title="Lab event" data-desc="A group discussion in the laboratory.">
+        <img src="Gallery/Lab event 2.jpg" alt="Lab event" />
+      </div>
+
+      <div class="gallery-item reveal" data-src="Gallery/Lab Event 3.jpg" data-title="Lab event" data-desc="Hands-on experimental work in the lab.">
+        <img src="Gallery/Lab Event 3.jpg" alt="Lab event" />
+      </div>
+
+      <div class="gallery-item reveal" data-src="Gallery/Lab event 4.jpg" data-title="Lab event" data-desc="Research team capturing data in the laboratory.">
+        <img src="Gallery/Lab event 4.jpg" alt="Lab event" />
+      </div>
+
+      <div class="gallery-item reveal" data-src="Gallery/Lab Event 5.jpg" data-title="Lab event" data-desc="A moment from a CNAB laboratory session.">
+        <img src="Gallery/Lab Event 5.jpg" alt="Lab event" />
+      </div>
+
+      <div class="gallery-item reveal" data-src="Gallery/Lab Experiment.JPG" data-title="Lab experiment" data-desc="Lab glassware and sample preparation for an experiment.">
+        <img src="Gallery/Lab Experiment.JPG" alt="Lab experiment" />
+      </div>
+
+      <div class="gallery-item reveal" data-src="Gallery/Regular Lab Work.JPG" data-title="Lab work" data-desc="Regular laboratory work in progress.">
+        <img src="Gallery/Regular Lab Work.JPG" alt="Lab work" />
+      </div>
+
+    </div>
+  </div>
+</section>
   </main>
 
   <!-- Lightbox -->
@@ -76,7 +98,7 @@
       <button class="lightbox-close" aria-label="Close">✕</button>
       <button class="lightbox-prev" aria-label="Previous image">‹</button>
       <button class="lightbox-next" aria-label="Next image">›</button>
-      <div class="lightbox-media">Image placeholder</div>
+      <div class="lightbox-media" aria-live="polite"></div>
       <div class="lightbox-caption">
         <h4 class="lightbox-title"></h4>
         <p class="lightbox-desc"></p>
