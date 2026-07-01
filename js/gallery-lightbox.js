@@ -42,10 +42,24 @@
     function render() {
       const item = items[currentIndex];
       if (!item) return;
-      const title = item.dataset.title || '';
+      const img = item.querySelector('img');
+      const src = item.dataset.src || (img ? img.src : '');
+      const alt = item.dataset.alt || (img ? img.alt : '');
+      const title = item.dataset.title || alt || '';
       const desc = item.dataset.desc || '';
       const caption = item.dataset.caption || '';
-      if (mediaEl) mediaEl.textContent = caption || title || 'Image placeholder';
+
+      if (mediaEl) {
+        mediaEl.innerHTML = '';
+        if (src) {
+          const fullImg = document.createElement('img');
+          fullImg.src = src;
+          fullImg.alt = alt;
+          mediaEl.appendChild(fullImg);
+        } else {
+          mediaEl.textContent = caption || title || 'Image placeholder';
+        }
+      }
       if (titleEl) titleEl.textContent = title;
       if (descEl) descEl.textContent = desc;
     }

@@ -17,11 +17,22 @@
   function init() {
     initMobileNav();
     initStickyHeader();
+    initMoreNav();
     initActiveLink();
+    initBackgroundImages();
     initFooterYear();
     initSmoothScroll();
     initRevealAnimations();
     initDropdowns();
+  }
+
+  /* ---------- Background images from HTML ---------- */
+  function initBackgroundImages() {
+    document.querySelectorAll('[data-bg-url]').forEach(function (element) {
+      const imageUrl = element.getAttribute('data-bg-url');
+      if (!imageUrl) return;
+      element.style.setProperty('--banner-bg-image', `url('${imageUrl}')`);
+    });
   }
 
   /* ---------- Mobile nav ---------- */
@@ -81,6 +92,68 @@
     }
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
+  }
+
+  /* ---------- Compact desktop navigation ---------- */
+  function initMoreNav() {
+    const navList = document.querySelector('.nav-list');
+    if (!navList) return;
+
+    const items = Array.from(navList.querySelectorAll(':scope > .nav-item'));
+    const visibleCount = 5;
+    const existingMore = navList.querySelector('.more-nav');
+
+    function resetNav() {
+      if (existingMore) existingMore.remove();
+      items.forEach(function (item) {
+        if (item.classList.contains('more-nav')) return;
+        item.style.display = '';
+      });
+    }
+
+    if (window.innerWidth < 960 || items.length <= visibleCount) {
+      resetNav();
+      return;
+    }
+
+    const hiddenItems = items.slice(visibleCount);
+    hiddenItems.forEach(function (item) {
+      item.style.display = 'none';
+    });
+
+    if (existingMore) {
+      const dropdown = existingMore.querySelector('.dropdown');
+      if (dropdown) {
+        dropdown.innerHTML = '';
+        hiddenItems.forEach(function (item) {
+          const clone = item.cloneNode(true);
+          clone.style.display = '';
+          dropdown.appendChild(clone);
+        });
+      }
+      return;
+    }
+
+    const moreItem = document.createElement('li');
+    moreItem.className = 'nav-item has-dropdown more-nav';
+    moreItem.innerHTML = '<button class="nav-link" aria-haspopup="true" aria-expanded="false">More</button><ul class="dropdown" role="menu"></ul>';
+    const dropdown = moreItem.querySelector('.dropdown');
+    hiddenItems.forEach(function (item) {
+      const clone = item.cloneNode(true);
+      clone.style.display = '';
+      dropdown.appendChild(clone);
+    });
+
+    const insertAfter = items[visibleCount - 1];
+    if (insertAfter && insertAfter.parentNode === navList) {
+      insertAfter.insertAdjacentElement('afterend', moreItem);
+    } else {
+      navList.appendChild(moreItem);
+    }
+
+    window.addEventListener('resize', function () {
+      initMoreNav();
+    });
   }
 
   /* ---------- Active nav link ---------- */
