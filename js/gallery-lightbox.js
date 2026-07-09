@@ -45,9 +45,10 @@
       const img = item.querySelector('img');
       const src = item.dataset.src || (img ? img.src : '');
       const alt = item.dataset.alt || (img ? img.alt : '');
-      const title = item.dataset.title || alt || '';
-      const desc = item.dataset.desc || '';
-      const caption = item.dataset.caption || '';
+      // captions/titles removed by design
+      const title = '';
+      const desc = '';
+      const caption = '';
 
       if (mediaEl) {
         mediaEl.innerHTML = '';
@@ -60,8 +61,9 @@
           mediaEl.textContent = caption || title || 'Image placeholder';
         }
       }
-      if (titleEl) titleEl.textContent = title;
-      if (descEl) descEl.textContent = desc;
+      // keep caption elements empty to avoid showing titles/descriptions
+      if (titleEl) titleEl.textContent = '';
+      if (descEl) descEl.textContent = '';
     }
 
     function next() {
@@ -77,7 +79,7 @@
     items.forEach(function (item, i) {
       item.setAttribute('tabindex', '0');
       item.setAttribute('role', 'button');
-      item.setAttribute('aria-label', 'View image: ' + (item.dataset.title || ''));
+      item.setAttribute('aria-label', 'View image');
       item.addEventListener('click', function () { openLightbox(i); });
       item.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') {

@@ -28,10 +28,48 @@
 
   /* ---------- Background images from HTML ---------- */
   function initBackgroundImages() {
-    document.querySelectorAll('[data-bg-url]').forEach(function (element) {
-      const imageUrl = element.getAttribute('data-bg-url');
-      if (!imageUrl) return;
-      element.style.setProperty('--banner-bg-image', `url('${imageUrl}')`);
+    document.querySelectorAll('[data-bg-url],[data-bg-urls]').forEach(function (element) {
+      const multi = element.getAttribute('data-bg-urls');
+      const single = element.getAttribute('data-bg-url');
+      if (multi) {
+        const urls = multi.split(',').map(function (value) {
+          return value.trim();
+        }).filter(Boolean);
+        if (!urls.length) return;
+
+        element.classList.add('hero-slider');
+        const wrapper = document.createElement('div');
+        wrapper.className = 'hero-slider-bg-wrapper';
+
+        const currentBg = document.createElement('div');
+        currentBg.className = 'hero-slider-bg hero-slider-bg-current';
+        currentBg.style.backgroundImage = "url('" + urls[0] + "')";
+
+        const nextBg = document.createElement('div');
+        nextBg.className = 'hero-slider-bg hero-slider-bg-next';
+        nextBg.style.backgroundImage = "url('" + urls[0] + "')";
+
+        wrapper.appendChild(currentBg);
+        wrapper.appendChild(nextBg);
+        element.insertBefore(wrapper, element.firstChild);
+
+        let currentIndex = 0;
+        setInterval(function () {
+          const nextIndex = (currentIndex + 1) % urls.length;
+          nextBg.style.backgroundImage = "url('" + urls[nextIndex] + "')";
+          nextBg.classList.add('visible');
+
+          window.setTimeout(function () {
+            currentBg.style.backgroundImage = nextBg.style.backgroundImage;
+            nextBg.classList.remove('visible');
+            currentIndex = nextIndex;
+          }, 900);
+        }, 6000);
+
+        return;
+      }
+      if (!single) return;
+      element.style.setProperty('--banner-bg-image', "url('" + single + "')");
     });
   }
 
@@ -260,4 +298,61 @@
       }
     });
   }
+
+  /* ---------- Custom pointer (desktop only) ---------- */
+  function initCustomCursor() {
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    try {
+      document.body.classList.add('custom-cursor-enabled');
+      const cursor = document.createElement('div');
+      cursor.className = 'custom-cursor';
+      cursor.style.pointerEvents = 'none';
+      cursor.style.opacity = '0';
+
+      const ring = document.createElement('div');
+      ring.className = 'ring';
+      const dot = document.createElement('div');
+      dot.className = 'dot';
+
+      cursor.appendChild(ring);
+      cursor.appendChild(dot);
+      document.body.appendChild(cursor);
+
+      let mouseX = window.innerWidth / 2;
+      let mouseY = window.innerHeight / 2;
+      let posX = mouseX;
+      let posY = mouseY;
+
+      function update() {
+        posX += (mouseX - posX) * 0.18;
+        posY += (mouseY - posY) * 0.18;
+        cursor.style.left = posX + 'px';
+        cursor.style.top = posY + 'px';
+        requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+
+      document.addEventListener('mousemove', function (e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursor.style.opacity = '1';
+      }, { passive: true });
+
+      document.addEventListener('mouseleave', function () { cursor.classList.add('hidden'); });
+      document.addEventListener('mouseenter', function () { cursor.classList.remove('hidden'); cursor.style.opacity = ''; });
+
+      const interactiveSelector = 'a, button, input, textarea, select, .btn, .gallery-item';
+      document.addEventListener('mouseover', function (e) {
+        if (e.target.closest(interactiveSelector)) cursor.classList.add('interact');
+      });
+      document.addEventListener('mouseout', function (e) {
+        if (e.target.closest(interactiveSelector)) cursor.classList.remove('interact');
+      });
+    } catch (err) {
+      console.error('Custom cursor init failed', err);
+    }
+  }
+
+  // initialize cursor after other inits
+  if (typeof initCustomCursor === 'function') initCustomCursor();
 })();
