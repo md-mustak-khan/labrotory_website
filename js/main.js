@@ -80,17 +80,32 @@
     const backdrop = document.querySelector('.nav-backdrop');
     if (!toggle || !nav) return;
 
+    function setNavState(isOpen) {
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      nav.classList.toggle('open', isOpen);
+      if (backdrop) backdrop.classList.toggle('open', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+
+      if (window.innerWidth < 960) {
+        nav.style.display = 'flex';
+        nav.style.transform = isOpen ? 'translateX(0)' : 'translateX(100%)';
+        nav.style.opacity = isOpen ? '1' : '0';
+        nav.style.visibility = isOpen ? 'visible' : 'hidden';
+        nav.style.pointerEvents = isOpen ? 'auto' : 'none';
+        nav.style.height = 'calc(100dvh - ' + getComputedStyle(document.documentElement).getPropertyValue('--header-height').trim() + ')';
+      } else {
+        nav.style.transform = '';
+        nav.style.opacity = '';
+        nav.style.visibility = '';
+        nav.style.pointerEvents = '';
+      }
+    }
+
     function openNav() {
-      toggle.setAttribute('aria-expanded', 'true');
-      nav.classList.add('open');
-      if (backdrop) backdrop.classList.add('open');
-      document.body.style.overflow = 'hidden';
+      setNavState(true);
     }
     function closeNav() {
-      toggle.setAttribute('aria-expanded', 'false');
-      nav.classList.remove('open');
-      if (backdrop) backdrop.classList.remove('open');
-      document.body.style.overflow = '';
+      setNavState(false);
     }
 
     toggle.addEventListener('click', function () {
@@ -116,7 +131,11 @@
 
     // Reset on resize
     window.addEventListener('resize', function () {
-      if (window.innerWidth >= 960) closeNav();
+      if (window.innerWidth >= 960) {
+        closeNav();
+      } else {
+        setNavState(nav.classList.contains('open'));
+      }
     });
   }
 
