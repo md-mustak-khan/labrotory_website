@@ -53,31 +53,16 @@
       </div>
     </section>
 
-    <!-- PLACEHOLDER: replace with real openings -->
+    <!-- Application form only: embedded Google Form -->
     <section class="section">
       <div class="container">
-        <span class="eyebrow">Openings</span>
-        <h2>Current openings</h2>
-        <div class="grid grid-2">
-          <article class="card reveal">
-            <div class="card-meta"><span class="badge badge-lab1">Food Science &amp; Nutraceutical</span></div>
-            <h3>PhD position — Phytochemistry of indigenous plants</h3>
-            <p>We are seeking a motivated PhD student to join ongoing work on the isolation and characterisation of bioactive compounds from selected indigenous plants of Bangladesh.</p>
-            <div class="card-footer"><span>Deadline: <strong>Placeholder date</strong></span><a class="btn btn-outline" href="#apply">How to apply</a></div>
-          </article>
-          <article class="card reveal">
-            <div class="card-meta"><span class="badge badge-lab2">Applied Biosciences</span></div>
-            <h3>MS position — Bioinformatics pipeline development</h3>
-            <p>An MS position is available for a student interested in developing reproducible bioinformatics pipelines for analysis of next-generation sequencing data.</p>
-            <div class="card-footer"><span>Deadline: <strong>Placeholder date</strong></span><a class="btn btn-outline" href="#apply">How to apply</a></div>
-          </article>
-          <article class="card reveal">
-            <div class="card-meta"><span class="badge">Joint</span></div>
-            <h3>Research Associate — Joint project</h3>
-            <p>A full-time Research Associate position is available for a joint project spanning both laboratories, with focus on integration of experimental and computational approaches.</p>
-            <div class="card-footer"><span>Deadline: <strong>Placeholder date</strong></span><a class="btn btn-outline" href="#apply">How to apply</a></div>
-          </article>
+        <span class="eyebrow">Apply online</span>
+        <h2>Submit your application</h2>
+        <p>Use the form below to apply. If the embedded form does not load, <a href="https://forms.gle/VmhAY7nqxbhp4SPt7" target="_blank" rel="noopener">open the form in a new tab</a> or use the direct URL shown below.</p>
+        <div style="margin-top: var(--space-4);">
+          <iframe src="https://forms.gle/VmhAY7nqxbhp4SPt7" title="CNAB application form" width="100%" height="700" style="border:1px solid var(--border); border-radius:8px;" loading="lazy"></iframe>
         </div>
+        <p style="margin-top: var(--space-3); word-break: break-all; color: var(--text-muted);">Direct URL: <a href="https://forms.gle/VmhAY7nqxbhp4SPt7" target="_blank" rel="noopener">https://forms.gle/VmhAY7nqxbhp4SPt7</a></p>
       </div>
     </section>
 
@@ -90,10 +75,9 @@
           <li>A current curriculum vitae</li>
           <li>A brief statement of research interests (1–2 pages)</li>
           <li>Academic transcripts (unofficial copies are acceptable at the initial stage)</li>
-          <li>Names and contact details of two academic referees</li>
         </ul>
         <p>For positions in the <strong>Laboratory of Food Science and Nutraceutical</strong>, please address your application to Prof. Dwaipayan Sikdar. For positions in the <strong>Laboratory of Applied Biosciences</strong>, please address your application to Assoc. Prof. Suman Mojumder. Contact details are available on the <a href="./contact.html">Contact page</a>.</p>
-        <p>We aim to acknowledge all applications within two weeks. Shortlisted candidates will be invited for an interview, which may be conducted in person or online.</p>
+        <p>We aim to acknowledge all applications within two weeks.</p>
       </div>
     </section>
 
@@ -106,7 +90,7 @@
         <!-- NOTE: this form is front-end only. To make it functional, wire it up to a service
              such as Formspree (https://formspree.io), Google Forms, or a mailto: action.
              Replace the <form> tag's action attribute and add the appropriate hidden fields. -->
-        <form class="contact-form" id="join-form" novalidate>
+        <form class="contact-form" id="join-form" action="https://formspree.io/f/REPLACE_WITH_ID" method="POST" novalidate>
           <div class="form-group">
             <label for="join-name">Name</label>
             <input type="text" id="join-name" name="name" required />
