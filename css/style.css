@@ -1233,11 +1233,23 @@ body.resources-page .page-banner {
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    border: 2.6px solid rgba(6,26,48,0.98);
-    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
-    box-shadow: 0 12px 28px rgba(10,37,64,0.18), 0 2px 0 rgba(255,255,255,0.2) inset;
-    transition: transform .18s var(--ease), background .18s var(--ease), border-color .18s var(--ease), box-shadow .18s var(--ease);
-    animation: cursor-rotate 6s linear infinite;
+    /* neutral high-contrast segments (white + near-black) so rotation is visible on any background */
+    background: conic-gradient(from 0deg, rgba(255,255,255,0.95) 0deg 140deg, rgba(0,0,0,0.86) 140deg 320deg, rgba(255,255,255,0.95) 320deg 360deg);
+    border: 2px solid rgba(255,255,255,0.95);
+    box-shadow: 0 16px 32px rgba(0,0,0,0.35), 0 2px 0 rgba(255,255,255,0.06) inset;
+    transition: transform .12s var(--ease), background .18s var(--ease), border-color .18s var(--ease), box-shadow .18s var(--ease);
+    animation: cursor-rotate 3.6s linear infinite;
+    mix-blend-mode: normal;
+  }
+
+  .custom-cursor .ring::before {
+    /* small inner highlight to add contrast on dark areas */
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.14), transparent 38%);
+    pointer-events: none;
   }
 
   .custom-cursor .dot {
@@ -1245,14 +1257,28 @@ body.resources-page .page-banner {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--lab2-accent), var(--lab1-accent));
-    box-shadow: 0 6px 18px rgba(42,157,143,0.28), 0 1px 0 rgba(255,255,255,0.25) inset;
+    /* bright neutral accent that's legible on light/dark: vivid yellow */
+    background: linear-gradient(135deg, #FFD166, #FDAE3B);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35), 0 1px 0 rgba(255,255,255,0.12) inset;
     transition: transform .12s var(--ease), background .12s var(--ease), box-shadow .12s var(--ease);
+    border: 2px solid rgba(0,0,0,0.85);
+    filter: drop-shadow(0 6px 10px rgba(0,0,0,0.32));
   }
 
   /* when over interactive elements, make the ring shrink and accent the dot */
-  .custom-cursor.interact .ring { transform: scale(0.6); border-color: var(--lab1-accent-dark); background: rgba(200,200,200,0.04); }
-  .custom-cursor.interact .dot { transform: scale(0.8); background: var(--lab1-accent); box-shadow: 0 4px 14px rgba(200,140,46,0.28); }
+  .custom-cursor.interact .ring {
+    transform: scale(0.58);
+    border-color: rgba(0,0,0,0.9);
+    /* invert the ring contrast slightly when interacting to remain visible */
+    background: conic-gradient(from 0deg, rgba(0,0,0,0.9) 0deg 140deg, rgba(255,255,255,0.95) 140deg 320deg, rgba(0,0,0,0.9) 320deg 360deg);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.36), 0 1px 0 rgba(255,255,255,0.04) inset;
+  }
+  .custom-cursor.interact .dot {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, #FFF7CC, #FFD166);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.36);
+    border-color: rgba(0,0,0,0.9);
+  }
 
   .custom-cursor.hidden { opacity: 0; }
   .custom-cursor.shrink { transform: translate(-50%, -50%) scale(0.6); }

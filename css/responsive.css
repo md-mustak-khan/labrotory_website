@@ -14,6 +14,29 @@
   .overview-showcase { grid-template-columns: 1fr; }
 }
 
+/* Mobile nav close button (visible inside the open menu) */
+@media (max-width: 959px) {
+  .primary-nav .nav-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.02);
+    border: 0;
+    font-size: 30px;
+    line-height: 1;
+    color: var(--text);
+    z-index: 160;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  .primary-nav .nav-close:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+}
+
 /* Desktop (≥ 960px) */
 @media (min-width: 960px) {
   .grid-3 { grid-template-columns: repeat(3, 1fr); }
