@@ -80,35 +80,95 @@
     const backdrop = document.querySelector('.nav-backdrop');
     if (!toggle || !nav) return;
 
+    // Debug: expose a small nav state logger if console available
+    function logNavState(prefix) {
+      try {
+        const vw = window.innerWidth;
+        const items = Array.from(nav.querySelectorAll('.nav-list > .nav-item'));
+        const visible = items.filter(i => (i.style.display !== 'none'));
+        console.debug('[nav-debug]', prefix, { vw: vw, navScroll: nav.scrollTop, itemsTotal: items.length, itemsVisible: visible.length, moreExists: !!nav.querySelector('.more-nav') });
+      } catch (e) { /* ignore */ }
+    }
+
     function setNavState(isOpen) {
+      // update aria and open class, let CSS handle positioning and transitions
       toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       nav.classList.toggle('open', isOpen);
       if (backdrop) backdrop.classList.toggle('open', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
-
-      if (window.innerWidth < 960) {
-        nav.style.display = 'flex';
-        nav.style.top = '0';
-        nav.style.height = '100dvh';
-        nav.style.maxHeight = '100dvh';
-        nav.style.transform = isOpen ? 'translateX(0)' : 'translateX(100%)';
-        nav.style.opacity = isOpen ? '1' : '0';
-        nav.style.visibility = isOpen ? 'visible' : 'hidden';
-        nav.style.pointerEvents = isOpen ? 'auto' : 'none';
-      } else {
-        nav.style.transform = '';
-        nav.style.opacity = '';
-        nav.style.visibility = '';
-        nav.style.pointerEvents = '';
-      }
+      // ensure mobile close button is visible when open
+      const navClose = nav.querySelector('.nav-close');
+      if (navClose) navClose.style.display = isOpen ? 'flex' : 'none';
+      logNavState(isOpen ? 'open-after-class' : 'closed-after-class');
     }
 
     function openNav() {
+      logNavState('open-before');
       setNavState(true);
+      // ensure the menu shows from the top after CSS transition finishes
+      function doTopAndFocus() {
+        try {
+          // clear any existing focus to avoid browser auto-scrolling
+          try { if (document.activeElement && typeof document.activeElement.blur === 'function') document.activeElement.blur(); } catch (e) {}
+
+          // reset scroll on the nav and the inner list (defensive)
+          try {
+            if (nav && 'scrollTop' in nav) {
+              nav.style.scrollBehavior = 'auto';
+              nav.scrollTop = 0;
+              nav.style.scrollBehavior = '';
+            }
+            const inner = nav.querySelector('.nav-list');
+            if (inner && 'scrollTop' in inner) {
+              inner.style.scrollBehavior = 'auto';
+              inner.scrollTop = 0;
+              inner.style.scrollBehavior = '';
+            }
+          } catch (err) { /* ignore */ }
+
+          const firstLink = nav.querySelector('.nav-list a, .nav-list button.nav-link');
+          if (firstLink && typeof firstLink.focus === 'function') firstLink.focus();
+        } catch (e) { /* ignore */ }
+      }
+
+      // fallback timer in case transitionend doesn't fire
+      const fallback = setTimeout(doTopAndFocus, 140);
+      function onTransition(e) {
+        // only run when the nav's position changed (left)
+        if (e.propertyName && e.propertyName.indexOf('left') === -1 && e.propertyName.indexOf('transform') === -1) return;
+        clearTimeout(fallback);
+        doTopAndFocus();
+      }
+      nav.addEventListener('transitionend', function (e) { onTransition(e); logNavState('open-after-transition'); }, { once: true });
     }
     function closeNav() {
       setNavState(false);
     }
+
+    // ensure a mobile-only nav close button exists; add/remove on resize
+    (function ensureNavClose() {
+      function createClose() {
+        if (nav.querySelector('.nav-close')) return;
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'nav-close';
+        btn.setAttribute('aria-label', 'Close navigation');
+        btn.innerHTML = '&times;';
+        btn.style.display = 'none';
+        btn.addEventListener('click', closeNav);
+        nav.insertBefore(btn, nav.firstChild);
+      }
+      function removeClose() {
+        const existing = nav.querySelector('.nav-close');
+        if (existing) existing.remove();
+      }
+
+      function update() {
+        if (window.innerWidth < 960) createClose(); else removeClose();
+      }
+      update();
+      window.addEventListener('resize', update);
+    })();
 
     toggle.addEventListener('click', function () {
       const isOpen = toggle.getAttribute('aria-expanded') === 'true';
@@ -159,7 +219,9 @@
     if (!navList) return;
 
     const items = Array.from(navList.querySelectorAll(':scope > .nav-item'));
-    const visibleCount = 5;
+    // Use matchMedia for reliable breakpoint checks and don't collapse on mobile
+    const isDesktop = window.matchMedia('(min-width: 960px)').matches;
+    const visibleCount = isDesktop ? 5 : 999;
     const existingMore = navList.querySelector('.more-nav');
 
     function resetNav() {
@@ -210,9 +272,11 @@
       navList.appendChild(moreItem);
     }
 
-    window.addEventListener('resize', function () {
-      initMoreNav();
-    });
+    // add a single resize listener to recompute nav behaviour
+    if (!initMoreNav._listening) {
+      window.addEventListener('resize', initMoreNav);
+      initMoreNav._listening = true;
+    }
   }
 
   /* ---------- Active nav link ---------- */
