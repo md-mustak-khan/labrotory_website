@@ -18,7 +18,7 @@
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a href="./index.html" class="logo" aria-label="CNAB home"><span class="logo-mark" aria-hidden="true">CN</span><span class="logo-text"><strong>CNAB</strong><small>Centre for Nutraceutical &amp; Applied Biosciences</small></span></a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
+      <button type="button" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
       <nav class="primary-nav" id="primary-nav" aria-label="Primary">
         <ul class="nav-list">
           <li class="nav-item"><a href="./index.html">Home</a></li>
@@ -78,41 +78,50 @@
           </div>
         </div>
 
-        <!-- PLACEHOLDER: replace with real Google Maps embed iframe -->
-        <div class="map-embed" role="region" aria-label="Map placeholder">
-          <div>
-            <strong>Map placeholder</strong><br/>
-            Replace this block with a real Google Maps embed iframe for the University of Chittagong campus.
+        <div class="map-embed reveal" role="region" aria-label="Department location">
+          <div class="map-embed-content">
+            <div>
+              <span class="eyebrow">Visit us</span>
+              <h3>Department of Biochemistry &amp; Molecular Biology</h3>
+              <p>University of Chittagong, Faculty of Biological Sciences Road, Chattogram, Bangladesh.</p>
+              <a class="btn btn-outline" href="https://www.google.com/maps/dir//Department+of+Biochemistry+%26+Molecular+Biology,+University+of+Chittagong,+FQ9J%2B292,+Faculty+of+Biological+Sciences+Road,+Chittagong/@24.3697969,90.0093277,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x30acd6e29aa31b61:0x874cbd7f4635b4be!2m2!1d91.7808742!2d22.4675136!5m2!1e1!1e4?entry=ttu&g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener">Open in Google Maps</a>
+            </div>
+            <img src="Gallery/location.jpg" alt="University campus building and academic environment" />
           </div>
         </div>
       </div>
     </section>
 
     <section class="section">
-      <div class="container" style="max-width: 720px;">
-        <span class="eyebrow">Message</span>
-        <h2>Send us a message</h2>
-        <!-- NOTE: front-end only. Wire up to Formspree / Google Forms / mailto to make functional. -->
-        <form class="contact-form" id="contact-form" novalidate>
-          <div class="form-group">
-            <label for="contact-name">Name</label>
-            <input type="text" id="contact-name" name="name" required />
+      <div class="container">
+        <div class="contact-form-card reveal">
+          <div class="contact-form-intro">
+            <span class="eyebrow">Message</span>
+            <h2>Send us a message</h2>
+            <p>Share your questions, collaboration ideas, or enquiries, and we’ll get back to you soon.</p>
           </div>
-          <div class="form-group">
-            <label for="contact-email">Email</label>
-            <input type="email" id="contact-email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label for="contact-subject">Subject</label>
-            <input type="text" id="contact-subject" name="subject" />
-          </div>
-          <div class="form-group">
-            <label for="contact-message">Message</label>
-            <textarea id="contact-message" name="message" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Send message</button>
-          <p id="contact-form-status" role="status" aria-live="polite" style="margin-top: var(--space-3); font-size: 0.9rem; color: var(--text-muted);"></p>
-        </form>
+          <!-- NOTE: front-end only. Wire up to Formspree / Google Forms / mailto to make functional. -->
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="contact-name">Name</label>
+              <input type="text" id="contact-name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Email</label>
+              <input type="email" id="contact-email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <input type="text" id="contact-subject" name="subject" />
+            </div>
+            <div class="form-group">
+              <label for="contact-message">Message</label>
+              <textarea id="contact-message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send message</button>
+            <p id="contact-form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
       </div>
     </section>
   </main>

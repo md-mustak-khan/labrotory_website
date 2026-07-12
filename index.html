@@ -29,7 +29,7 @@
         </span>
       </a>
 
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
+      <button type="button" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav">
         <span></span><span></span><span></span>
       </button>
 
@@ -61,7 +61,7 @@
   <main id="main">
 
     <!-- ============ HERO ============ -->
-    <section class="hero" aria-labelledby="hero-title" data-bg-urls="https://images.unsplash.com/photo-1628595351029-c2bf17511435?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D, https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D, https://images.unsplash.com/photo-1631816285219-c6af3851e360?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D , https://images.unsplash.com/photo-1747454250258-1ca7fdc21ae3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+    <section class="hero" aria-labelledby="hero-title" data-bg-urls="https://img.magnific.com/premium-photo/dna-molecules-science-human-cell-biology-dna-strands-virus-molecular-structure-dna-molecule-helix-spiral-medical-science-background_265223-179394.jpg, https://images.unsplash.com/photo-1576086213369-97a306d36557?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D, https://images.unsplash.com/photo-1631816285219-c6af3851e360?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D , https://images.unsplash.com/photo-1747454250258-1ca7fdc21ae3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D ,https://img.magnific.com/free-photo/scientist-analyzes-bacterium-with-high-scale-magnification-generated-by-ai_188544-27928.jpg?t=st=1783873572~exp=1783877172~hmac=1850373dd4701625a5b773dc2b15715718b3562d58d96479065324a5aa9c9d1f&w=1060 ">
       <div class="container hero-inner">
         <span class="eyebrow">Department of Biochemistry &amp; Molecular Biology · University of Chittagong </span>
         <h1 id="hero-title">Centre for Nutraceutical and Applied Biosciences</h1>
@@ -188,60 +188,71 @@
       <div class="container">
         <div class="section-title">
           <span class="eyebrow">Explore CNAB</span>
-          <h2 id="overview-title">What you will find here</h2>
+          <h2 id="overview-title">A closer look at our research and community</h2>
         </div>
-        <p class="section-subtitle">Discover CNAB's mission, research programmes, publications, people, facilities, and opportunities for collaboration and study.</p>
+        <p class="section-subtitle">Each area below highlights a different dimension of CNAB — from scientific focus to recent discovery and opportunities to join the team.</p>
 
-        <div class="grid grid-3">
-          <article class="card reveal">
-            <h3>About CNAB</h3>
-            <p>Learn about the centre's history, vision, and the shared structure that connects two complementary laboratories in biochemistry and molecular biology.</p>
-            <div class="card-footer"><a class="btn btn-outline" href="./about.html">Read more</a></div>
+        <div class="overview-showcase">
+          <article class="overview-card overview-card-research reveal">
+            <div class="overview-card-body">
+              <h3>Research Areas &amp; Themes</h3>
+              <p>CNAB investigates how natural compounds, molecular processes, and computational science can strengthen innovation in food, health, and biotechnology.</p>
+
+              <div class="overview-theme-grid">
+                <div class="overview-theme-card">
+                  <img src="https://img.magnific.com/premium-photo/biology-laboratory-nature-science-plants-with-biochemistry-structure-chemical-formula-green-background_1033579-172153.jpg?w=1060" alt="Laboratory nutrition and food science theme" />
+                  <div>
+                    <h4>Functional Foods</h4>
+                    <p>Bioactives, plant chemistry, and nutraceutical potential.</p>
+                  </div>
+                </div>
+                <div class="overview-theme-card">
+                  <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=800&q=80" alt="Molecular biology and biotechnology theme" />
+                  <div>
+                    <h4>Molecular Biology</h4>
+                    <p>Gene function, molecular mechanisms, and applied biosystems.</p>
+                  </div>
+                </div>
+                <div class="overview-theme-card">
+                  <img src="https://img.magnific.com/free-photo/ai-dna-gene-editing-technology-biotech-genetic-engineering_53876-143120.jpg?t=st=1783875547~exp=1783879147~hmac=2b0c31e6eddbb53845acd81fe6bf3d6c83292e5fe1fb3116baf1dd58cfade4ed&w=1060" alt="Bioinformatics and data science theme" />
+                  <div>
+                    <h4>Bioinformatics</h4>
+                    <p>Data-driven analysis for biological insight and discovery.</p>
+                  </div>
+                </div>
+                <div class="overview-theme-card">
+                  <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=900&q=80" alt="Biotechnology innovation theme" />
+                  <div>
+                    <h4>Translational Biotechnology</h4>
+                    <p>Bridging lab research with real-world impact and application.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer"><a class="btn btn-outline" href="./research.html">Explore research themes</a></div>
           </article>
-          <article class="card reveal">
-            <h3>Research</h3>
-            <p>Explore CNAB's current research themes in nutraceutical bioactivity, molecular biology, bioinformatics, and applied biotechnology.</p>
-            <div class="card-footer"><a class="btn btn-outline" href="./research.html">Read more</a></div>
+
+          <article class="overview-card overview-card-publication reveal">
+            <div class="overview-card-body">
+              <h3>Latest Publication</h3>
+              <p class="overview-highlight">Emerging roles of bioactive compounds in health and disease</p>
+              <p>Recent CNAB work highlights how plant-derived compounds and molecular insight can inform nutrition, therapeutics, and public health.</p>
+              <div class="overview-meta">Featured paper · 2026 · CNAB research team</div>
+            </div>
+            <div class="card-footer"><a class="btn btn-outline" href="./publications.html">See all publications</a></div>
           </article>
-          <article class="card reveal">
-            <h3>Publications</h3>
-            <p>Browse the centre's publications, including journal articles, conference papers and collaborative research outputs.</p>
-            <div class="card-footer"><a class="btn btn-outline" href="./publications.html">Read more</a></div>
-          </article>
-          <article class="card reveal">
-            <h3>People</h3>
-            <p>Meet the researchers, faculty, and students who drive CNAB's scientific programmes and collaborative projects.</p>
-            <div class="card-footer"><a class="btn btn-outline" href="./people.html">Read more</a></div>
-          </article>
-          <article class="card reveal">
-            <h3>Facilities</h3>
-            <p>See the laboratories, instrumentation, and shared infrastructure that support experiments in food science, nutraceuticals, and biosciences.</p>
-            <div class="card-footer"><a class="btn btn-outline" href="./facilities.html">Read more</a></div>
-          </article>
-          <article class="card reveal">
-            <h3>Gallery</h3>
-            <p>View the centre's scientific imagery, lab environments and visual highlights from research activities.</p>
-            <div class="card-footer"><a class="btn btn-outline" href="./gallery.html">Read more</a></div>
-          </article>
-          <article class="card reveal">
-            <h3>Collaborations</h3>
-            <p>Discover CNAB's academic and industry partnerships, joint programmes and research collaborations.</p>
-            <div class="card-footer"><a class="btn btn-outline" href="./collaborations.html">Read more</a></div>
-          </article>
-          <article class="card reveal">
-            <h3>Join Us</h3>
-            <p>Find opportunities for prospective students, research scholars and collaborators to join the centre.</p>
-            <div class="card-footer"><a class="btn btn-outline" href="./join-us.html">Read more</a></div>
-          </article>
-          <article class="card reveal">
-            <h3>Resources</h3>
-            <p>Access CNAB's resource page for documents, protocols and information for prospective partners and students.</p>
-            <div class="card-footer"><a class="btn btn-outline" href="./resources.html">Read more</a></div>
-          </article>
-          <article class="card reveal">
-            <h3>Contact</h3>
-            <p>Get in touch with the centre, the principal investigators, and the departmental office for enquiries and partnerships.</p>
-            <div class="card-footer"><a class="btn btn-outline" href="./contact.html">Read more</a></div>
+
+          <article class="overview-card overview-card-join reveal">
+            <div class="overview-card-body">
+              <h3>Join Our Lab</h3>
+              <p>We welcome motivated students, scholars, and collaborators who want to contribute to research in food science, biosciences, and translational biotechnology.</p>
+              <ul class="overview-list">
+                <li>Graduate and undergraduate opportunities</li>
+                <li>Research assistant and collaborative projects</li>
+                <li>Training in modern laboratory and computational methods</li>
+              </ul>
+            </div>
+            <div class="card-footer"><a class="btn btn-outline" href="./join-us.html">Learn how to join</a></div>
           </article>
         </div>
       </div>
