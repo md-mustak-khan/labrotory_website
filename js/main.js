@@ -88,11 +88,13 @@
 
       if (window.innerWidth < 960) {
         nav.style.display = 'flex';
+        nav.style.top = '0';
+        nav.style.height = '100dvh';
+        nav.style.maxHeight = '100dvh';
         nav.style.transform = isOpen ? 'translateX(0)' : 'translateX(100%)';
         nav.style.opacity = isOpen ? '1' : '0';
         nav.style.visibility = isOpen ? 'visible' : 'hidden';
         nav.style.pointerEvents = isOpen ? 'auto' : 'none';
-        nav.style.height = 'calc(100dvh - ' + getComputedStyle(document.documentElement).getPropertyValue('--header-height').trim() + ')';
       } else {
         nav.style.transform = '';
         nav.style.opacity = '';
