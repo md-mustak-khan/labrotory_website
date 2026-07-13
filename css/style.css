@@ -1026,6 +1026,26 @@ body.resources-page .page-banner {
   font-size: 0.8rem;
   color: var(--primary-light);
 }
+.pub-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--primary);
+  background: var(--primary-soft);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 0.5rem 0.85rem;
+  text-decoration: none;
+  transition: all .2s var(--ease);
+}
+.pub-link:hover,
+.pub-link:focus {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary-dark);
+}
 .empty-state {
   text-align: center;
   padding: var(--space-7);
