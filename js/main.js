@@ -113,21 +113,27 @@
 
           // reset scroll on the nav and the inner list (defensive)
           try {
-            if (nav && 'scrollTop' in nav) {
-              nav.style.scrollBehavior = 'auto';
-              nav.scrollTop = 0;
-              nav.style.scrollBehavior = '';
-            }
             const inner = nav.querySelector('.nav-list');
             if (inner && 'scrollTop' in inner) {
               inner.style.scrollBehavior = 'auto';
               inner.scrollTop = 0;
               inner.style.scrollBehavior = '';
             }
-          } catch (err) { /* ignore */ }
 
-          const firstLink = nav.querySelector('.nav-list a, .nav-list button.nav-link');
-          if (firstLink && typeof firstLink.focus === 'function') firstLink.focus();
+            // scroll nav so the first link is visible at the top (shows first 3-4 items)
+            const firstLink = nav.querySelector('.nav-list a, .nav-list button.nav-link');
+            if (firstLink) {
+              const desired = Math.max(0, firstLink.offsetTop - 8);
+              if ('scrollTop' in nav) {
+                nav.style.scrollBehavior = 'auto';
+                nav.scrollTop = desired;
+                nav.style.scrollBehavior = '';
+              }
+              if (typeof firstLink.focus === 'function') firstLink.focus();
+              // debug
+              try { console.debug('[nav-debug] scrolled-to-first', { firstOffset: firstLink.offsetTop, navScroll: nav.scrollTop, desired: desired }); } catch(e){}
+            }
+          } catch (err) { /* ignore */ }
         } catch (e) { /* ignore */ }
       }
 
