@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Publications — CNAB</title>
-  <meta name="description" content="Peer-reviewed publications from CNAB researchers, filterable by laboratory and year." />
+  <meta name="description" content="Peer-reviewed publications from CNAB researchers, searchable by title, author, journal, and year." />
   <meta property="og:title" content="Publications — CNAB" />
-  <meta property="og:description" content="Search and filter publications from CNAB." />
+  <meta property="og:description" content="Search and filter publications from CNAB by title, author, journal, and year." />
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,7 +19,7 @@
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a href="./index.html" class="logo" aria-label="CNAB home"><span class="logo-mark" aria-hidden="true">CN</span><span class="logo-text"><strong>CNAB</strong><small>Centre for Nutraceutical &amp; Applied Biosciences</small></span></a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
+      <button type="button" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
       <nav class="primary-nav" id="primary-nav" aria-label="Primary">
         <ul class="nav-list">
           <li class="nav-item"><a href="./index.html">Home</a></li>
@@ -46,118 +46,143 @@
   </header>
 
   <main id="main">
-    <section class="page-banner" aria-labelledby="page-title" data-bg-url=" https://images.unsplash.com/photo-1570929057588-6952f7dd2305?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+    <section class="page-banner reveal" aria-labelledby="page-title" data-bg-url=" https://images.unsplash.com/photo-1570929057588-6952f7dd2305?q=80&w=1331&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
       <div class="container">
         <div class="breadcrumbs"><a href="./index.html">Home</a><span>/</span>Publications</div>
         <h1 id="page-title">Publications</h1>
-        <p>Peer-reviewed publications from CNAB researchers. Search by title, author, or journal, and filter by laboratory or year.</p>
+        <p>Peer-reviewed CNAB publications. Search by title, author, journal, or year.</p>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section reveal">
       <div class="container">
 
-        <div class="filter-bar" role="search">
+        <div class="filter-bar reveal" role="search">
           <label for="pub-search">Search</label>
           <input type="search" id="pub-search" placeholder="Search title, authors, journal…" aria-label="Search publications" />
-          <label for="pub-lab-filter">Laboratory</label>
-          <select id="pub-lab-filter" aria-label="Filter by laboratory">
-            <option value="all">All laboratories</option>
-            <option value="lab1">Food Science &amp; Nutraceutical</option>
-            <option value="lab2">Applied Biosciences</option>
-          </select>
           <label for="pub-year-filter">Year</label>
           <select id="pub-year-filter" aria-label="Filter by year">
             <option value="all">All years</option>
-            <option value="2025">2025</option>
-            <option value="2024">2024</option>
-            <option value="2023">2023</option>
-            <option value="2022">2022</option>
+            <option value="2026">2026</option>
+            <option value="2021">2021</option>
+            <option value="2019">2019</option>
+            <option value="2017">2017</option>
+            <option value="2014">2014</option>
+            <option value="2013">2013</option>
+            <option value="2012">2012</option>
+            <option value="2011">2011</option>
           </select>
         </div>
 
         <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: var(--space-4);">Showing <strong id="pub-count">0</strong> results.</p>
 
-        <!-- PLACEHOLDER: replace with real publications -->
         <ul class="pub-list" id="pub-list">
-          <li class="pub-item lab1" data-lab="lab1" data-year="2025" data-search="author a, author b, dwaipayan sikdar. title of paper on polyphenol bioavailability in dietary flavonoids. journal of food bioactives. 2025.">
-            <h4>Title of paper on polyphenol bioavailability in dietary flavonoids</h4>
-            <div class="pub-authors">Author A, Author B, Sikdar D.</div>
-            <div class="pub-journal">Journal of Food Bioactives</div>
+          <li class="pub-item reveal" data-year="2026" data-search="investigating the effect of post-harvest treatment on nutritional and antioxidant activities of ulva lactuca originating from bangladesh. suman mojumder, mita nur akter, oishee barua, rahul sharma, dwaipayan sikdar, sajal roy, rajib banik, uttam kumer roy. journal of applied phycology. 2026.">
+            <h4>Investigating the effect of post-harvest treatment on nutritional and antioxidant activities of Ulva lactuca originating from Bangladesh</h4>
+            <div class="pub-authors">Suman Mojumder, Mita Nur Akter, Oishee Barua, Rahul Sharma, Dwaipayan Sikdar, Sajal Roy, Rajib Banik, Uttam Kumer Roy</div>
+            <div class="pub-journal">Journal of Applied Phycology</div>
             <div class="pub-meta">
-              <span class="badge badge-lab1">Food Science &amp; Nutraceutical</span>
-              <span>2025</span>
-              <a class="pub-doi" href="#" aria-label="DOI placeholder">DOI: xx.xxxx/xxxxx</a>
+              <span>08 April 2026</span>
+              <a class="pub-link" href="https://link.springer.com/article/10.1007/s10811-026-03846-4" target="_blank" rel="noopener noreferrer">View publication</a>
             </div>
           </li>
-          <li class="pub-item lab2" data-lab="lab2" data-year="2025" data-search="author c, author d, suman mojumder. comparative genomics of selected environmental microbial isolates. bmc genomics. 2025.">
-            <h4>Comparative genomics of selected environmental microbial isolates</h4>
-            <div class="pub-authors">Author C, Author D, Mojumder S.</div>
-            <div class="pub-journal">BMC Genomics</div>
+          <li class="pub-item reveal" data-year="2021" data-search="comparison of phenolic content and antioxidant activity of two common fruits of bangladesh in solvents of varying polarities. r ghosh, p barua, o sikder, s saha, s mojumder, d sikdar. journal of food research. 2021.">
+            <h4>Comparison of phenolic content and antioxidant activity of two common fruits of Bangladesh in solvents of varying polarities</h4>
+            <div class="pub-authors">R Ghosh, P Barua, O Sikder, S Saha, S Mojumder, D Sikdar</div>
+            <div class="pub-journal">Journal of Food Research</div>
             <div class="pub-meta">
-              <span class="badge badge-lab2">Applied Biosciences</span>
-              <span>2025</span>
-              <a class="pub-doi" href="#" aria-label="DOI placeholder">DOI: xx.xxxx/xxxxx</a>
+              <span>December 2021</span>
+              <a class="pub-link" href="https://www.researchgate.net/publication/356981629_Comparison_of_phenolic_content_and_antioxidant_activity_of_two_common_fruits_of_Bangladesh_in_solvents_of_varying_polarities" target="_blank" rel="noopener noreferrer">View publication</a>
             </div>
           </li>
-          <li class="pub-item lab1" data-lab="lab1" data-year="2024" data-search="author e, author f, dwaipayan sikdar. antioxidant capacity of selected indigenous fruits of bangladesh. food chemistry. 2024.">
-            <h4>Antioxidant capacity of selected indigenous fruits of Bangladesh</h4>
-            <div class="pub-authors">Author E, Author F, Sikdar D.</div>
-            <div class="pub-journal">Food Chemistry</div>
+          <li class="pub-item reveal" data-year="2019" data-search="presence of cellulolytic and xylanolytic activities in the gut fluid of grasshopper oxya velox. suman dash, lucky hazera mubareka, rajib kumar shil, dwaipayan sikdar, suman mojumder. journal of biotechnologia. 2019.">
+            <h4>Presence of cellulolytic and xylanolytic activities in the gut fluid of grasshopper Oxya velox</h4>
+            <div class="pub-authors">Suman Dash, Lucky Hazera Mubareka, Rajib Kumar Shil, Dwaipayan Sikdar, Suman Mojumder</div>
+            <div class="pub-journal">Journal of BioTechnologia</div>
             <div class="pub-meta">
-              <span class="badge badge-lab1">Food Science &amp; Nutraceutical</span>
-              <span>2024</span>
-              <a class="pub-doi" href="#" aria-label="DOI placeholder">DOI: xx.xxxx/xxxxx</a>
+              <span>26 September 2019</span>
+              <a class="pub-link" href="https://www.biotechnologia-journal.org/Presence-of-cellulolytic-and-xylanolytic-activities-in-the-gut-fluid-of-grasshopper,104621,0,2.html" target="_blank" rel="noopener noreferrer">View publication</a>
             </div>
           </li>
-          <li class="pub-item lab2" data-lab="lab2" data-year="2024" data-search="author g, suman mojumder. reproducible pipelines for variant annotation in human genomic data. bioinformatics. 2024.">
-            <h4>Reproducible pipelines for variant annotation in human genomic data</h4>
-            <div class="pub-authors">Author G, Mojumder S.</div>
-            <div class="pub-journal">Bioinformatics</div>
+          <li class="pub-item reveal" data-year="2017" data-search="effect of extraction solvents on phenolic contents and antioxidant capacities of artocarpus chaplasha and carissa carandas fruits from bangladesh. gouri dhar, sonam akther, afrin sultana, uchen may, mohammed moinul islam, mowri dhali, dwaipayan sikdar. j appl biol biotechnol. 2017.">
+            <h4>Effect of extraction solvents on phenolic contents and antioxidant capacities of Artocarpus chaplasha and Carissa carandas fruits from Bangladesh</h4>
+            <div class="pub-authors">Gouri Dhar, Sonam Akther, Afrin Sultana, Uchen May, Mohammed Moinul Islam, Mowri Dhali, Dwaipayan Sikdar</div>
+            <div class="pub-journal">J Appl Biol Biotechnol</div>
             <div class="pub-meta">
-              <span class="badge badge-lab2">Applied Biosciences</span>
-              <span>2024</span>
-              <a class="pub-doi" href="#" aria-label="DOI placeholder">DOI: xx.xxxx/xxxxx</a>
+              <span>May 2017</span>
+              <a class="pub-link" href="https://pdfs.semanticscholar.org/6f0d/1f528ee985c191419a6ad7fd8bc0dec88c0e.pdf" target="_blank" rel="noopener noreferrer">View publication</a>
             </div>
           </li>
-          <li class="pub-item lab1" data-lab="lab1" data-year="2023" data-search="author h, author i, dwaipayan sikdar. standardisation of a traditional botanical extract. journal of ethnopharmacology. 2023.">
-            <h4>Standardisation of a traditional botanical extract</h4>
-            <div class="pub-authors">Author H, Author I, Sikdar D.</div>
-            <div class="pub-journal">Journal of Ethnopharmacology</div>
+          <li class="pub-item reveal" data-year="2017" data-search="phytochemical screening, phenolic content and antioxidant activity of wild date palm phoenix sylvestris roxb. fruit extracted with different solvents. s saha, b barua, d sikdar. international food research journal. 2017.">
+            <h4>Phytochemical screening, phenolic content and antioxidant activity of wild date palm (Phoenix sylvestris Roxb.) fruit extracted with different solvents</h4>
+            <div class="pub-authors">S Saha, B Barua, D Sikdar</div>
+            <div class="pub-journal">International Food Research Journal</div>
             <div class="pub-meta">
-              <span class="badge badge-lab1">Food Science &amp; Nutraceutical</span>
-              <span>2023</span>
-              <a class="pub-doi" href="#" aria-label="DOI placeholder">DOI: xx.xxxx/xxxxx</a>
+              <span>2017</span>
+              <a class="pub-link" href="https://www.researchgate.net/profile/Dwaipayan-Sikdar/publication/322254798_Phytochemical_screening_phenolic_content_and_antioxidant_activity_of_wild_date_palm_Phoenix_sylvestris_Roxb_fruit_extracted_with_different_solvents/links/5a5654bfaca272bb6963e925/Phytochemical-screening-phenolic-content-and-antioxidant-activity-of-wild-date-palm-Phoenix-sylvestris-Roxb-fruit-extracted-with-different-solvents.pdf" target="_blank" rel="noopener noreferrer">View publication</a>
             </div>
           </li>
-          <li class="pub-item lab2" data-lab="lab2" data-year="2023" data-search="author j, author k, suman mojumder. expression analysis of candidate stress-response genes. gene. 2023.">
-            <h4>Expression analysis of candidate stress-response genes</h4>
-            <div class="pub-authors">Author J, Author K, Mojumder S.</div>
-            <div class="pub-journal">Gene</div>
+          <li class="pub-item reveal" data-year="2014" data-search="total phenolic content, reducing power, antioxidative and anti-amylase activities of five bangladeshi fruits. j aklima, s mojumder, d sikdar. international food research journal. 2014.">
+            <h4>Total phenolic content, reducing power, antioxidative and anti-amylase activities of five Bangladeshi fruits</h4>
+            <div class="pub-authors">J Aklima, S Mojumder, D Sikdar</div>
+            <div class="pub-journal">International Food Research Journal</div>
             <div class="pub-meta">
-              <span class="badge badge-lab2">Applied Biosciences</span>
-              <span>2023</span>
-              <a class="pub-doi" href="#" aria-label="DOI placeholder">DOI: xx.xxxx/xxxxx</a>
+              <span>2014</span>
+              <a class="pub-link" href="http://www.ifrj.upm.edu.my/21%20(01)%202014/16%20IFRJ%2021%20(01)%202014%20Sikdar%20440.pdf" target="_blank" rel="noopener noreferrer">View publication</a>
             </div>
           </li>
-          <li class="pub-item lab1" data-lab="lab1" data-year="2022" data-search="author l, dwaipayan sikdar. dietary fibre fractions from local legumes. food research international. 2022.">
-            <h4>Dietary fibre fractions from local legumes</h4>
-            <div class="pub-authors">Author L, Sikdar D.</div>
-            <div class="pub-journal">Food Research International</div>
+          <li class="pub-item reveal" data-year="2014" data-search="isolation and identification of cellulolytic bacteria from the gut of three phytophagus insect species. rajib kumar shil, suman mojumder, faozia faleha sadida, myn uddin, dwaipayan sikdar. brazilian archives of biology and technology. 2014.">
+            <h4>Isolation and identification of cellulolytic bacteria from the gut of three phytophagus insect species</h4>
+            <div class="pub-authors">Rajib Kumar Shil, Suman Mojumder, Faozia Faleha Sadida, Myn Uddin, Dwaipayan Sikdar</div>
+            <div class="pub-journal">Brazilian Archives of Biology and Technology</div>
             <div class="pub-meta">
-              <span class="badge badge-lab1">Food Science &amp; Nutraceutical</span>
-              <span>2022</span>
-              <a class="pub-doi" href="#" aria-label="DOI placeholder">DOI: xx.xxxx/xxxxx</a>
+              <span>2014</span>
+              <a class="pub-link" href="https://www.scielo.br/j/babt/a/yhtgn5SxcFqT5zTkLxXpK3c/?format=html&lang=en" target="_blank" rel="noopener noreferrer">View publication</a>
             </div>
           </li>
-          <li class="pub-item lab2" data-lab="lab2" data-year="2022" data-search="author m, suman mojumder. population genetics of selected south asian cohorts. human genetics. 2022.">
-            <h4>Population genetics of selected South Asian cohorts</h4>
-            <div class="pub-authors">Author M, Mojumder S.</div>
-            <div class="pub-journal">Human Genetics</div>
+          <li class="pub-item reveal" data-year="2013" data-search="racial variations in serum lipid and lipoprotein levels in bangalee and chakma populations of bangladesh. dwaipayan sikdar, abul hashem mohammad, ramendu parial. int j cur res rev. 2013.">
+            <h4>Racial variations in serum lipid and lipoprotein levels in Bangalee and Chakma populations of Bangladesh</h4>
+            <div class="pub-authors">Dwaipayan Sikdar, Abul Hashem Mohammad, Ramendu Parial</div>
+            <div class="pub-journal">Int J Cur Res Rev</div>
             <div class="pub-meta">
-              <span class="badge badge-lab2">Applied Biosciences</span>
-              <span>2022</span>
-              <a class="pub-doi" href="#" aria-label="DOI placeholder">DOI: xx.xxxx/xxxxx</a>
+              <span>February 2013</span>
+              <a class="pub-link" href="https://d1wqtxts1xzle7.cloudfront.net/35179953/paper3-libre.pdf?1413629779=&response-content-disposition=inline%3B+filename%3DRACIAL_VARIATIONS_IN_SERUM_LIPID_AND_LIP.pdf&Expires=1783956325&Signature=ZdQhE-~0kIvbh1VHrvf5DIwItLH4JMV15xlu5KQk8mq4LiAfd-9MQNR9~BycxvUDHBdiHk6vCxh2TDSxQMwqZRN817IgSyLXOTMiaqH8iSp~g1H1Czs3t6C-iw3W5DruD2M6TzwRKe~rbks34htbAelZZAER9CTBvlNCutk0~xrODXieifCsfeC~P2S0ZKeZau3804zbGALHrLvrJNx4I20Hl2Jl3rLMRFaHSbXXm1eF~J0WrQ4uRn~~uD5mRTSVo4zhTtiLHyc3gAEwminqW3eCrtstU9UBHns~86cwqcSjdt0REBTELQUHBcaHuRRZnuNvCVJc870fAYj8m9zxfg__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA" target="_blank" rel="noopener noreferrer">View publication</a>
+            </div>
+          </li>
+          <li class="pub-item reveal" data-year="2012" data-search="comparative analysis on the major nutrient composition of locally available four different varieties of rice oryza sativa in bangladesh. srikanta chowdhury, md ta chowdhury, md golam kabir, dwaipayan sikdar, aninda kumar nath, md zia uddin, dibyajyoti saha. research journal of science and technology. 2012.">
+            <h4>Comparative analysis on the major nutrient composition of locally available four different varieties of rice (Oryza sativa) in Bangladesh</h4>
+            <div class="pub-authors">Srikanta Chowdhury, Md TA Chowdhury, Md Golam Kabir, Dwaipayan Sikdar, Aninda Kumar Nath, Md Zia Uddin, Dibyajyoti Saha</div>
+            <div class="pub-journal">Research Journal of Science and Technology</div>
+            <div class="pub-meta">
+              <span>2012</span>
+              <a class="pub-link" href="https://www.proquest.com/openview/451cc9f11cca8c81284ce3d95580c45c/1?pq-origsite=gscholar&cbl=1096439" target="_blank" rel="noopener noreferrer">View publication</a>
+            </div>
+          </li>
+          <li class="pub-item reveal" data-year="2012" data-search="multiple endo-f-1, 4-glucanases present in the gut fluid of a defoliating beetle podontia quatuordecimpunctata coleoptera chrysomelidae. mohammad mosleh uddin, md mahmudul hasan chowdhury, suman mojumder, dwaipayan sikdar. pakistan journal of biological sciences. 2012.">
+            <h4>Multiple Endo-f-1, 4-glucanases Present in the Gut Fluid of a Defoliating Beetle, Podontia quatuordecimpunctata (Coleoptera: Chrysomelidae)</h4>
+            <div class="pub-authors">Mohammad Mosleh Uddin, Md Mahmudul Hasan Chowdhury, Suman Mojumder, Dwaipayan Sikdar</div>
+            <div class="pub-journal">Pakistan Journal of Biological Sciences</div>
+            <div class="pub-meta">
+              <span>2012</span>
+              <a class="pub-link" href="https://www.researchgate.net/profile/Dwaipayan-Sikdar/publication/258114471_Multiple_Endo-b-14-glucanases_Present_in_the_Gut_Fluid_of_a_Defoliating_Beetle_Podontia_quatuordecimpunctata_Coleoptera_Chrysomelidae/links/5955e410a6fdcc2569d69d46/Multiple-Endo-b-1-4-glucanases-Present-in-the-Gut-Fluid-of-a-Defoliating-Beetle-Podontia-quatuordecimpunctata-Coleoptera-Chrysomelidae.pdf" target="_blank" rel="noopener noreferrer">View publication</a>
+            </div>
+          </li>
+          <li class="pub-item reveal" data-year="2012" data-search="antimicrobial and cytotoxic activities of larval extract of musca domestica house fly. mohammad nasir uddin ahamad, suman mojumder, dwaipayan sikdar asing. int j curr res rev. 2012.">
+            <h4>Antimicrobial and cytotoxic activities of larval extract of Musca domestica (house fly)</h4>
+            <div class="pub-authors">Mohammad Nasir Uddin Ahamad, Suman Mojumder, Dwaipayan Sikdar Asing</div>
+            <div class="pub-journal">Int J Curr Res Rev</div>
+            <div class="pub-meta">
+              <span>2012</span>
+              <a class="pub-link" href="https://d1wqtxts1xzle7.cloudfront.net/53617628/Antimicrobial_and_cytotoxic_activities_o20170621-25252-4qx11l-libre.pdf?1498093515=&response-content-disposition=inline%3B+filename%3DAntimicrobial_and_cytotoxic_activities_o.pdf&Expires=1783956645&Signature=fmu4SNyEHAI7ad7VSJwrmBkCkIMlvFEOg5y594muyHyPe6MpXDgGsOJ16ZbZGHi~oT0a2otmnMf2fWa8yjy0Rf9YTpj6nHQYlv24lergalZVMe1GCH4iuLaFOKvUFzhFo9vCmRKBweVHCPKi48DcopCSs9b8D6OZW48S0bOJ~TbKjM3qdFpjSyx2ecAiCOIYmcJ1fZpusiynYdcrQ1b077-tLdn7fBtF~4LfqFiY6wngPk2L7~8I62liSjHjDxezf2hD~dm6t3Jh8f3jBFmQcwokAz9-MEdhExX9dSDmOL0Jr92P6UM6wD~dNfvddtrlRU8xQh-BPA~mmfxfgwopgA__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA" target="_blank" rel="noopener noreferrer">View publication</a>
+            </div>
+          </li>
+          <li class="pub-item" data-year="2011" data-search="chemical and microbiological quality assessment of raw and processed liquid market milks of bangladesh. tanim jabid hossain, md khorshed alam, dwaipayan sikdar. continental journal of food science and technology. 2011.">
+            <h4>Chemical and microbiological quality assessment of raw and processed liquid market milks of Bangladesh</h4>
+            <div class="pub-authors">Tanim Jabid Hossain, Md Khorshed Alam, Dwaipayan Sikdar</div>
+            <div class="pub-journal">Continental Journal of Food Science and Technology</div>
+            <div class="pub-meta">
+              <span>12 July 2011</span>
+              <a class="pub-link" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3944219" target="_blank" rel="noopener noreferrer">View publication</a>
             </div>
           </li>
         </ul>
