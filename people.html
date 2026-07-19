@@ -18,7 +18,7 @@
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a href="./index.html" class="logo" aria-label="CNAB home"><span class="logo-mark" aria-hidden="true">CN</span><span class="logo-text"><strong>CNAB</strong><small>Centre for Nutraceutical &amp; Applied Biosciences</small></span></a>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
+      <button type="button" class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span><span></span></button>
       <nav class="primary-nav" id="primary-nav" aria-label="Primary">
         <ul class="nav-list">
           <li class="nav-item"><a href="./index.html">Home</a></li>
@@ -55,13 +55,6 @@
 
     <section class="section">
       <div class="container">
-        <div class="filter-bar" role="group" aria-label="Filter by laboratory">
-          <label>Filter by lab</label>
-          <button class="btn btn-outline people-filter active" data-filter="all">All</button>
-          <button class="btn btn-outline people-filter" data-filter="lab1">Food Science &amp; Nutraceutical</button>
-          <button class="btn btn-outline people-filter" data-filter="lab2">Applied Biosciences</button>
-        </div>
-
         <!-- Principal Investigators -->
 <h2 id="pi-heading">Principal Investigators</h2>
 
@@ -114,27 +107,74 @@
 
         <h2>MS Students</h2>
         <div class="people-grid" style="margin-bottom: var(--space-7);">
-          <article class="person-card reveal" data-lab="lab1"><div class="placeholder-img person-photo" role="img" aria-label="Placeholder portrait"><span>Photo placeholder</span></div><h4>MS Student 1</h4><div class="person-role">MS Student</div><span class="badge badge-lab1">Food Science &amp; Nutraceutical</span></article>
-          <article class="person-card reveal" data-lab="lab1"><div class="placeholder-img person-photo" role="img" aria-label="Placeholder portrait"><span>Photo placeholder</span></div><h4>MS Student 2</h4><div class="person-role">MS Student</div><span class="badge badge-lab1">Food Science &amp; Nutraceutical</span></article>
-          <article class="person-card reveal" data-lab="lab2"><div class="placeholder-img person-photo" role="img" aria-label="Placeholder portrait"><span>Photo placeholder</span></div><h4>MS Student 3</h4><div class="person-role">MS Student</div><span class="badge badge-lab2">Applied Biosciences</span></article>
-          <article class="person-card reveal" data-lab="lab2"><div class="placeholder-img person-photo" role="img" aria-label="Placeholder portrait"><span>Photo placeholder</span></div><h4>MS Student 4</h4><div class="person-role">MS Student</div><span class="badge badge-lab2">Applied Biosciences</span></article>
+          <article class="person-card reveal" data-lab="lab1"><div class="placeholder-img person-photo" role="img" aria-label="Placeholder portrait"><span>Photo placeholder</span></div><h4>MS Student 1</h4><div class="person-role">MS Student</div></article>
+          <article class="person-card reveal" data-lab="lab1"><div class="placeholder-img person-photo" role="img" aria-label="Placeholder portrait"><span>Photo placeholder</span></div><h4>MS Student 2</h4><div class="person-role">MS Student</div></article>
+          <article class="person-card reveal" data-lab="lab2"><div class="placeholder-img person-photo" role="img" aria-label="Placeholder portrait"><span>Photo placeholder</span></div><h4>MS Student 3</h4><div class="person-role">MS Student</div></article>
+          <article class="person-card reveal" data-lab="lab2"><div class="placeholder-img person-photo" role="img" aria-label="Placeholder portrait"><span>Photo placeholder</span></div><h4>MS Student 4</h4><div class="person-role">MS Student</div></article>
         </div>
 
         
         <h2>Undergraduate Students</h2>
         <div class="people-grid" style="margin-bottom: var(--space-7);">
-          <article class="person-card reveal" data-lab="lab1"><div class="placeholder-img person-photo" role="img" aria-label="Placeholder portrait"><span>Photo placeholder</span></div><h4>Undergraduate Student 1</h4><div class="person-role">Undergraduate Student</div><span class="badge badge-lab1">Food Science &amp; Nutraceutical</span></article>
-          <article class="person-card reveal" data-lab="lab1"><div class="placeholder-img person-photo" role="img" aria-label="Placeholder portrait"><span>Photo placeholder</span></div><h4>Undergraduate Student 2</h4><div class="person-role">Undergraduate Student</div><span class="badge badge-lab1">Food Science &amp; Nutraceutical</span></article>
-          <article class="person-card reveal" data-lab="lab2"><div class="placeholder-img person-photo" role="img" aria-label="Placeholder portrait"><span>Photo placeholder</span></div><h4>Undergraduate Student 3</h4><div class="person-role">Undergraduate Student</div><span class="badge badge-lab2">Applied Biosciences</span></article>
-          <article class="person-card reveal" data-lab="lab2"><div class="placeholder-img person-photo" role="img" aria-label="Placeholder portrait"><span>Photo placeholder</span></div><h4>Undergraduate Student 4</h4><div class="person-role">Undergraduate Student</div><span class="badge badge-lab2">Applied Biosciences</span></article>
+          <article class="person-card reveal" data-lab="lab1"><div class="placeholder-img person-photo" role="img" aria-label="Placeholder portrait"><span>Photo placeholder</span></div><h4>Undergraduate Student 1</h4><div class="person-role">Undergraduate Student</div></article>
+          <article class="person-card reveal" data-lab="lab1"><div class="placeholder-img person-photo" role="img" aria-label="Placeholder portrait"><span>Photo placeholder</span></div><h4>Undergraduate Student 2</h4><div class="person-role">Undergraduate Student</div></article>
+          <article class="person-card reveal" data-lab="lab2"><div class="placeholder-img person-photo" role="img" aria-label="Placeholder portrait"><span>Photo placeholder</span></div><h4>Undergraduate Student 3</h4><div class="person-role">Undergraduate Student</div></article>
+          <article class="person-card reveal" data-lab="lab2"><div class="placeholder-img person-photo" role="img" aria-label="Placeholder portrait"><span>Photo placeholder</span></div><h4>Undergraduate Student 4</h4><div class="person-role">Undergraduate Student</div></article>
         </div>
 
         <h2>Alumni</h2>
-        <div class="people-grid">
-          <article class="person-card reveal" data-lab="lab1"><div class="placeholder-img person-photo" role="img" aria-label="Placeholder portrait"><span>Photo placeholder</span></div><h4>Alumnus / Alumna A</h4><div class="person-role">PhD, 2023 · now at Institution X</div><span class="badge badge-lab1">Food Science &amp; Nutraceutical</span></article>
-          <article class="person-card reveal" data-lab="lab2"><div class="placeholder-img person-photo" role="img" aria-label("Placeholder portrait"><span>Photo placeholder</span></div><h4>Alumnus / Alumna B</h4><div class("person-role">MS, 2022 · now at Institution Y</div><span class("badge badge-lab2">Applied Biosciences</span></article>
-          <article class("person-card reveal" data-lab("lab1"><div class("placeholder-img person-photo" role("img" aria-label("Placeholder portrait"><span>Photo placeholder</span></div><h4>Alumnus / Alumna C</h4><div class("person-role">MS, 2021 · now at Institution Z</div><span class("badge badge-lab1">Food Science &amp; Nutraceutical</span></article>
-          <article class="person-card reveal" data-lab="lab2"><div class="placeholder-img person-photo" role="img" aria-label="Placeholder portrait"><span>Photo placeholder</span></div><h4>Alumnus / Alumna D</h4><div class="person-role">PhD, 2020 · now at Institution W</div><span class="badge badge-lab2">Applied Biosciences</span></article>
+        <div class="alumni-intro reveal">
+          <p>Our alumni describe their time at CNAB as a transformative journey shaped by rigorous training, collaborative mentoring, and hands-on research. They developed confidence in scientific thinking, data analysis, and communication while working across interdisciplinary projects. The lab culture encouraged curiosity, resilience, and teamwork, helping them build strong foundations for careers in academia, industry, and public health.</p>
+        </div>
+        <div class="alumni-grid">
+          <article class="person-card reveal alumni-card" data-lab="lab1">
+            <div class="alumni-layout">
+              <div class="alumni-media">
+                <div class="placeholder-img person-photo" role="img" aria-label="Placeholder portrait"><span>Photo placeholder</span></div>
+                <h4>Alumnus / Alumna A</h4>
+                <div class="person-role">PhD, 2023 · now at Institution X</div>
+              </div>
+              <div class="alumni-content">
+                <p>“My time at CNAB was a turning point in my academic and professional life. I learned to approach research with discipline, curiosity, and confidence. The mentorship I received helped me strengthen my scientific thinking, improve my communication, and build a deeper understanding of how collaborative research can create meaningful impact. The lab environment encouraged perseverance, teamwork, and lifelong learning, and those values continue to guide me in my career today.”</p>
+              </div>
+            </div>
+          </article>
+          <article class="person-card reveal alumni-card" data-lab="lab2">
+            <div class="alumni-layout">
+              <div class="alumni-media">
+                <div class="placeholder-img person-photo" role="img" aria-label="Placeholder portrait"><span>Photo placeholder</span></div>
+                <h4>Alumnus / Alumna B</h4>
+                <div class="person-role">MS, 2022 · now at Institution Y</div>
+              </div>
+              <div class="alumni-content">
+                <p>“Being part of CNAB gave me a strong foundation in scientific research and professional growth. I developed better analytical skills, learned how to work with others in a demanding academic environment, and gained confidence in presenting ideas and solving problems. The experience taught me the value of patience, responsibility, and continuous learning, and it prepared me well for the opportunities that followed after graduation.”</p>
+              </div>
+            </div>
+          </article>
+          <article class="person-card reveal alumni-card" data-lab="lab1">
+            <div class="alumni-layout">
+              <div class="alumni-media">
+                <div class="placeholder-img person-photo" role="img" aria-label="Placeholder portrait"><span>Photo placeholder</span></div>
+                <h4>Alumnus / Alumna C</h4>
+                <div class="person-role">MS, 2021 · now at Institution Z</div>
+              </div>
+              <div class="alumni-content">
+                <p>“CNAB offered me an environment where curiosity was encouraged and growth felt natural. I learned how to approach challenges with focus, how to support my peers, and how to turn questions into meaningful research. The experience gave me a stronger sense of purpose, improved my confidence, and helped me build a professional path grounded in knowledge, discipline, and dedication.”</p>
+              </div>
+            </div>
+          </article>
+          <article class="person-card reveal alumni-card" data-lab="lab2">
+            <div class="alumni-layout">
+              <div class="alumni-media">
+                <div class="placeholder-img person-photo" role="img" aria-label="Placeholder portrait"><span>Photo placeholder</span></div>
+                <h4>Alumnus / Alumna D</h4>
+                <div class="person-role">PhD, 2020 · now at Institution W</div>
+              </div>
+              <div class="alumni-content">
+                <p>“My experience at CNAB was both intellectually enriching and personally transformative. It exposed me to high-quality research, taught me how to handle responsibility, and strengthened my communication and teamwork skills. I also developed a deeper appreciation for the importance of mentorship and collaboration in scientific progress. Those experiences shaped my professional journey and continue to influence the way I work and contribute to the field.”</p>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -164,22 +204,5 @@
   </footer>
 
   <script src="./js/main.js"></script>
-  <script>
-    /* People filter */
-    (function () {
-      const btns = document.querySelectorAll('.people-filter');
-      const cards = document.querySelectorAll('.person-card');
-      btns.forEach(function (b) {
-        b.addEventListener('click', function () {
-          btns.forEach(function (x) { x.classList.remove('active'); });
-          b.classList.add('active');
-          const f = b.dataset.filter;
-          cards.forEach(function (c) {
-            c.style.display = (f === 'all' || c.dataset.lab === f) ? '' : 'none';
-          });
-        });
-      });
-    })();
-  </script>
 </body>
 </html>
