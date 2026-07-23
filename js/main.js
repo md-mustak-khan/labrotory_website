@@ -105,13 +105,10 @@
     function openNav() {
       logNavState('open-before');
       setNavState(true);
-      // ensure the menu shows from the top after CSS transition finishes
+      // keep the menu anchored at the top so the full page list can be scrolled smoothly on mobile
       function doTopAndFocus() {
         try {
-          // clear any existing focus to avoid browser auto-scrolling
           try { if (document.activeElement && typeof document.activeElement.blur === 'function') document.activeElement.blur(); } catch (e) {}
-
-          // reset scroll on the nav and the inner list (defensive)
           try {
             const inner = nav.querySelector('.nav-list');
             if (inner && 'scrollTop' in inner) {
@@ -119,19 +116,10 @@
               inner.scrollTop = 0;
               inner.style.scrollBehavior = '';
             }
-
-            // scroll nav so the first link is visible at the top (shows first 3-4 items)
-            const firstLink = nav.querySelector('.nav-list a, .nav-list button.nav-link');
-            if (firstLink) {
-              const desired = Math.max(0, firstLink.offsetTop - 8);
-              if ('scrollTop' in nav) {
-                nav.style.scrollBehavior = 'auto';
-                nav.scrollTop = desired;
-                nav.style.scrollBehavior = '';
-              }
-              if (typeof firstLink.focus === 'function') firstLink.focus();
-              // debug
-              try { console.debug('[nav-debug] scrolled-to-first', { firstOffset: firstLink.offsetTop, navScroll: nav.scrollTop, desired: desired }); } catch(e){}
+            if ('scrollTop' in nav) {
+              nav.style.scrollBehavior = 'auto';
+              nav.scrollTop = 0;
+              nav.style.scrollBehavior = '';
             }
           } catch (err) { /* ignore */ }
         } catch (e) { /* ignore */ }
